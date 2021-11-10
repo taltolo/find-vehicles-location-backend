@@ -1,3 +1,5 @@
+//Serach for the data on each vehicles insaid the polygon
+//Return an array of that vehicles
 function findIdVehicle(vehicles, locations) {
   let vehiclesId = [];
   locations.map((coordinates, indexC) => {

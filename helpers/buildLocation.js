@@ -1,3 +1,4 @@
+//Build the array location fron each vehicles data
 function buildLocationArray(vehicles) {
   let location = [];
   vehicles.map((vehicle, index) => {
