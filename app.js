@@ -24,6 +24,4 @@ const vehiclesRoute = require('./routes/vehicles');
 app.use('/vehicles', vehiclesRoute);
 
 //Start listen
-app.listen(3000, () => {
-  console.log('App listening on port 3000!');
-});
+app.listen(3000);
