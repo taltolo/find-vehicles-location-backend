@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
 const cors = require('cors');
 app.use(cors());
+
+//set the Header
 app.all('*', (req, res, next) => {
   res.setHeader('Acces-Control-Allow-Origin', '*');
   res.setHeader('Acces-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE');
@@ -11,12 +12,12 @@ app.all('*', (req, res, next) => {
 });
 
 //Middlewares
-//Using middleware parser
-app.use(bodyParser.json());
-app.use('/vehicles', (req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3001');
-  next();
-});
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 
 //Import Routes
 const vehiclesRoute = require('./routes/vehicles');
